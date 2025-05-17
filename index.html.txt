@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mistral Chat</title>
+</head>
+<body>
+  <h1>Parlez à Mistral</h1>
+  <textarea id="prompt" rows="4" cols="50" placeholder="Pose une question..."></textarea><br>
+  <button onclick="envoyer()">Envoyer</button>
+  <pre id="reponse">Réponse...</pre>
+
+  <script>
+    async function envoyer() {
+      const prompt = document.getElementById("prompt").value;
+      const response = await fetch("https://TON-APP.render.com/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ prompt })
+      });
+
+      const data = await response.json();
+      document.getElementById("reponse").innerText = data.reponse;
+    }
+  </script>
+</body>
+</html>
