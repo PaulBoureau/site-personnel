@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-API_KEY = "TA_CLE_API_TOGETHER"  # Remplace par ta vraie clé
+API_KEY = "46aeebb6c697d1ac9b0c180b977df331bc135ed8a0284d9d7b11cf741f99a8ac"  # Remplace par ta vraie clé
 
 @app.route("/api", methods=["POST"])
 def api():
